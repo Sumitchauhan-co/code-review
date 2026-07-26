@@ -29,10 +29,10 @@ export type UserMenuTriggerVariant = 'compact' | 'profile';
 
 type UserMenuProps = {
 	user: UserMenuUser;
-	/** `compact` — avatar-only trigger; `profile` — avatar + name in the trigger. */
 	variant?: UserMenuTriggerVariant;
 	plan?: string;
 	className?: string;
+	isCollapsed?: boolean; 
 };
 
 export function getDisplayName(user: UserMenuUser) {
@@ -75,6 +75,7 @@ export function UserMenu({
 	variant = 'profile',
 	plan = DEFAULT_PLAN,
 	className,
+	isCollapsed = false, 
 }: UserMenuProps) {
 	const router = useRouter();
 	const displayName = getDisplayName(user);
@@ -104,7 +105,10 @@ export function UserMenu({
 					) : (
 						<Button
 							variant="ghost"
-							className="h-9 gap-2 px-2"
+							className={cn(
+								"h-9 gap-2 px-2",
+								isCollapsed && "justify-center"
+							)}
 							aria-label="Open account menu"
 						/>
 					)
@@ -112,9 +116,9 @@ export function UserMenu({
 			>
 				<UserAvatar
 					user={user}
-					size={variant === 'compact' ? 'default' : 'sm'}
+					size={(variant === 'compact' || isCollapsed) ? 'default' : 'sm'}
 				/>
-				{variant === 'profile' ? (
+				{variant === 'profile' && !isCollapsed ? (
 					<>
 						<span className="max-w-32 truncate text-left text-xs font-medium">
 							{displayName}
@@ -124,7 +128,7 @@ export function UserMenu({
 				) : null}
 			</DropdownMenuTrigger>
 			<DropdownMenuContent
-				align="end"
+				align={isCollapsed ? "center" : "end"}
 				className="w-56"
 			>
 				<DropdownMenuGroup>

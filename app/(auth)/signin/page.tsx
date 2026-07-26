@@ -14,10 +14,11 @@ import {
 	FieldSet,
 } from '@/components/ui/field';
 import { GithubSignInForm } from '@/features/auth/components/github-signin-form';
+import { ModeToggle } from '@/components/mode-toggle';
 
 export const metadata: Metadata = {
 	title: 'Sign in',
-	description: 'Sign in to Chai AI Code Reviewer with your GitHub account.',
+	description: 'Sign in to Code Reviewer with your GitHub account.',
 };
 
 type SignInPageProps = {
@@ -28,7 +29,11 @@ const SignInPage = async ({ searchParams }: SignInPageProps) => {
 	const { callbackUrl } = await searchParams;
 
 	return (
-		<div className="flex min-h-screen w-full flex-col items-center justify-center p-4 md:p-8">
+		<div className="relative flex min-h-screen w-full flex-col items-center justify-center p-4 md:p-8">
+			<div className="absolute right-4 top-4 md:right-8 md:top-8">
+				<ModeToggle />
+			</div>
+
 			<div className="w-full max-w-md space-y-4">
 				<Card className="w-full border-border/60 shadow-xl backdrop-blur-sm">
 					<CardHeader className="space-y-3 pb-6 text-center">
@@ -36,7 +41,7 @@ const SignInPage = async ({ searchParams }: SignInPageProps) => {
 							{/* Light mode logo */}
 							<Image
 								src="/logo.svg"
-								alt="Chai AI Code Reviewer"
+								alt="Code Reviewer"
 								width={40}
 								height={40}
 								priority
@@ -45,7 +50,7 @@ const SignInPage = async ({ searchParams }: SignInPageProps) => {
 							{/* Dark mode logo */}
 							<Image
 								src="/logo(dark).svg"
-								alt="Chai AI Code Reviewer"
+								alt="Code Reviewer"
 								width={40}
 								height={40}
 								priority
