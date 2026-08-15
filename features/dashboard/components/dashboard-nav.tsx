@@ -12,7 +12,7 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { DASHBOARD_NAV_ITEMS, type DashboardRoute } from '../lib/route';
+import { DASHBOARD_NAV_ITEMS, type DashboardRoute } from '../lib/routes';
 import { GitHubIcon } from '@/features/auth/components/github-signin-form';
 
 const NAV_ICONS = {

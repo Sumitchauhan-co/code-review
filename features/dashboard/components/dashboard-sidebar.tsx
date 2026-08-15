@@ -13,7 +13,7 @@ import {
 	SidebarSeparator,
 } from '@/components/ui/sidebar';
 import { UserMenuUser } from '@/features/auth/components/user-menu';
-import { DASHBOARD_ROUTES } from '../lib/route';
+import { DASHBOARD_ROUTES } from '../lib/routes';
 import { DashboardNav } from './dashboard-nav';
 import { SidebarUserButton } from './sidebar-user-button';
 

@@ -1,7 +1,7 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+	allowedDevOrigins: ['outage-relic-ounce.ngrok-free.dev'],
 };
 
 export default nextConfig;
