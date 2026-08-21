@@ -1,5 +1,5 @@
-import type { CodeChunk } from '@/features/reviews/types/review';
 import { getPineconeIndex } from '@/features/pinecone/client';
+import { CodeChunk } from './types/review';
 
 const CONTEXT_RESULTS = 10;
 

@@ -9,7 +9,7 @@ import {
 } from './vectors';
 import { buildRepoNamespace } from '@/features/repo-sync/server/repo-sync';
 import { postPrComment } from './post-pr-comment';
-import { inngest } from '@/integration/inngest/client';
+import { inngest } from '../../inngest/client';
 
 export const reviewPullRequest = inngest.createFunction(
 	{ id: 'review-pull-request', triggers: { event: 'github/pr.received' } },

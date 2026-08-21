@@ -1,4 +1,4 @@
-import type { CodeChunk, PrFile } from '@/features/reviews/types/review';
+import { CodeChunk, PrFile } from '../server/types/review';
 
 const MAX_CHUNK_LINES = 80;
 

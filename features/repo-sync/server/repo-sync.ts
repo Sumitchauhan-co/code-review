@@ -2,8 +2,8 @@ import { getPineconeIndex } from '@/features/pinecone/client';
 import { RepoFile } from '../types';
 import { getGithubApp } from '@/features/github/utils/github-app';
 import { CodeChunk } from '@/features/reviews/server/types/review';
-import { inngest } from '@/integration/inngest/client';
 import { prisma } from '@/lib/db';
+import { inngest } from '../../inngest/client';
 
 const MAX_FILE_SIZE_BYTES = 100_000;
 const MAX_FILES = 100;

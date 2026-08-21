@@ -6,7 +6,7 @@ import {
 	getRepoFiles,
 	saveRepoChunks,
 } from '@/features/repo-sync/server/repo-sync';
-import { inngest } from '@/integration/inngest/client';
+import { inngest } from '../../inngest/client';
 
 export const syncRepoCodebaseFunction = inngest.createFunction(
 	{
